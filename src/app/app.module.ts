@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/page-not-found.component';
+import { LoginRootingModule } from './login/login-rooting.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/pag
   ],
   imports: [
     BrowserModule,
+    LoginRootingModule,
     AppRoutingModule,
     UiModule,
     NgbModule

@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { UiComponent } from './components/ui/ui.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Router, RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [UiComponent, HeaderComponent, NavComponent, FooterComponent],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
   ]
 })
 export class UiModule { }
