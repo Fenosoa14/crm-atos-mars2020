@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { PageLoginComponent } from './login/pages/page-login/page-login.component';
-import { PagePrestationsComponent } from './prestations/pages/page-prestations/page-prestations.component';
-import { PageClientsComponent } from './clients/pages/page-clients/page-clients.component';
 
 
 // const routes: Routes = [
@@ -16,7 +14,7 @@ import { PageClientsComponent } from './clients/pages/page-clients/page-clients.
 // ];
 
 const routes: Routes = [
-  { path: 'login', component: PageLoginComponent },
+  
   {
     path: '',
     redirectTo: '/login',
@@ -29,6 +27,10 @@ const routes: Routes = [
   {
     path: 'clients',
     loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
   },
   {
     path: '**',
