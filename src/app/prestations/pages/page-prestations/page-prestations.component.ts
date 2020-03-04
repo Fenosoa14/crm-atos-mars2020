@@ -18,7 +18,7 @@ export class PagePrestationsComponent implements OnInit {
   constructor(private ps: PrestationsService) { }
 
   ngOnInit(): void {
-    this.entete = ['Type', 'Client', 'NbJours', 'TjhmHT', 'TotalHT', 'TotalTTC', 'State'];
+    this.entete = ['Type', 'Client', 'NbJours', 'TjhmHT', 'TotalHT', 'TotalTTC', 'State','Modifier statut'];
     this.collection$= this.ps.collection;
     // this.ps.collection.subscribe(
     //     (prestations) => {
