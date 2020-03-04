@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Observable, Subscription } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Component({
   selector: 'app-page-prestations',
@@ -12,6 +13,8 @@ export class PagePrestationsComponent implements OnInit {
 
   public collection$: Observable<Prestation[]>;
   public entete: string[];
+  // public states: State;
+  public states = Object.values(State);
   constructor(private ps: PrestationsService) { }
 
   ngOnInit(): void {
@@ -22,6 +25,12 @@ export class PagePrestationsComponent implements OnInit {
     //       this.collection = prestations;
     //     }
     // );
+  }
+
+  public changeState(prestation: Prestation, event) {
+    this.ps.updatePrestationState(prestation, event.target.value).subscribe((retPrestat: Prestation) => {
+      prestation.state = retPrestat.state;
+    });
   }
 
 }
