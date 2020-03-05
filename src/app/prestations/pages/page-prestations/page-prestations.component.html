@@ -1,23 +1,26 @@
-<app-tableau-light [entete]="entete">
+<app-template-b [title]="titreAprojeter" [subtitle]="sousTitreAprojeter">
 
-        <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
-            <td >{{ prestation.typePresta }}</td>
-            <td >{{ prestation.client }}</td>
-            <td >{{ prestation.nbJours }}</td>
-            <td >{{ prestation.tjmHt | currency: 'EUR' }}</td>
-            <td >{{ prestation | total | currency: 'EUR' }}</td>
-            <td >{{ prestation | total:'TTC' | currency: 'EUR' }}</td>
-            <td >{{ prestation.state }}</td>
-            <td [appState]="prestation.state">
-                <select (change)="changeState(prestation, $event)">
-                    <!-- <option *ngFor="let state of states | keyvalue" [value]="state"> {{ state.value }}</option> -->
-                    <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
-                </select> 
-            </td>
-          </tr>
+        <app-tableau-dark [entete]="entete">
 
-</app-tableau-light>
+                <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
+                    <td >{{ prestation.typePresta }}</td>
+                    <td >{{ prestation.client }}</td>
+                    <td >{{ prestation.nbJours }}</td>
+                    <td >{{ prestation.tjmHt | currency: 'EUR' }}</td>
+                    <td >{{ prestation | total | currency: 'EUR' }}</td>
+                    <td >{{ prestation | total:'TTC' | currency: 'EUR' }}</td>
+                    <td >{{ prestation.state }}</td>
+                    <td [appState]="prestation.state">
+                        <select (change)="changeState(prestation, $event)">
+                            <!-- <option *ngFor="let state of states | keyvalue" [value]="state"> {{ state.value }}</option> -->
+                            <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
+                        </select> 
+                    </td>
+                </tr>
 
-<h1></h1>
-<p class="orange">test</p>
-<p>test</p>
+        </app-tableau-dark>
+
+        <app-button [label]="titreBouton" [route]="chemin"></app-button>
+        <app-button [label]="titreBouton" [externalLink]="externalLink"></app-button>
+
+</app-template-b>

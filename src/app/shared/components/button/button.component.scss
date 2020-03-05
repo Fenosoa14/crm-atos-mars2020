@@ -1,0 +1,34 @@
+@import 'theme';
+@import 'fonts';
+
+a {
+    margin-left: 10px;
+    color: $light-color;
+    display: inline-block;
+    padding: 1em;
+    font-size: $regular-fz;
+    background: lighten($color3, 15);
+    transition: all .5s;
+    &:hover {
+        text-decoration: none;
+        background: $color3;
+    }
+}
+
+
+// app-template-a app-button a { ==> je ne peux pas faire ca mais dans angular on a :host-context(xxxxxx) qui marche seulement avec le shaddow dom
+:host-context(app-template-a) a {
+    background: lighten($color2, 10);
+    transition: all .5s;
+    &:hover {
+        background: $color2;
+    }
+}
+
+:host-context(app-template-b) a {
+    background: lighten($color2, 10);
+    transition: all .5s;
+    &:hover {
+        background: $color2;
+    }
+}
