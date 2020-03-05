@@ -1,15 +1,8 @@
-<div class="table-responsive">
+<app-tableau-light [entete]="entete">
 
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col" *ngFor="let titre of entete">{{ titre }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
+        <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
             <td >{{ prestation.typePresta }}</td>
-            <td [appState]="prestation.state">{{ prestation.client }}</td>
+            <td >{{ prestation.client }}</td>
             <td >{{ prestation.nbJours }}</td>
             <td >{{ prestation.tjmHt | currency: 'EUR' }}</td>
             <td >{{ prestation | total | currency: 'EUR' }}</td>
@@ -19,10 +12,12 @@
                 <select (change)="changeState(prestation, $event)">
                     <!-- <option *ngFor="let state of states | keyvalue" [value]="state"> {{ state.value }}</option> -->
                     <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
-                </select>
+                </select> 
             </td>
           </tr>
-        </tbody>
-      </table>
 
-</div>
+</app-tableau-light>
+
+<h1></h1>
+<p class="orange">test</p>
+<p>test</p>

@@ -1,0 +1,14 @@
+<div class="table-responsive">
+    <table class="table table-bordered" id="table-dark">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" *ngFor="let titre of entete">{{ titre }}</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <ng-content></ng-content>
+
+        </tbody>
+      </table>
+</div>

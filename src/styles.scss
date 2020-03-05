@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+// p {
+//     background: red;
+// }
+
+// // selecteur orange
+// .orange {
+//     background: green;
+// }
+
+// // il faut battre le poids du css pour l'ecraser
+// // .orange {
+// //     background: green;
+// // }
+
+// // battu par 
+// // p.orange {
+// //     background: green;
+// // }
+
+// // si meme poids, celui dernier l'emporte
+
+// //pseudo selecteur
+// div p:first-child{
+//     background: hotpink;
+// }
+
+// //troisieme enfant du div
+// div p:nth-child(3){
+//     background: indigo;
+// }
+
+// //tous les ids pink de la classe orange
+// .orange#pink {
+//     background: lightblue;
+// }
+
+// // !important bat tous, meme le style dans la page html
+// p {
+//     background: black !important;
+// }
+
+// //resume poids des selecteurs
+// // selecteur   | !important | style= | id | pseudo, class, attr | simple
+// // p {}        | 0             0       0               0           1
+// // .orange {}     0            0       0               1           0
+// // a:hover {}      0           0       0               1           1
+// // #green  {}      0           0       1               0           0
+// // style=          0           1       0               0           0
+// // !important      1           0       0               0           0
+// // div p #green    0           0       1               0           2    
+
+
+// //header
+// .htittle
+// .hsubtitle
+// .hlinks
+// //main
+// .htittle
+// .hsubtitle
+// .hlinks
+// //footer
+// .htittle
+// .hsubtitle
+// .hlinks
+
+// // ==> en tout cela fait 90points 
+
+// body>header h1
+// body>header h2
+// body>header a
+
+// main h1
+// main h2
+// main a
+
+// body>footer h1
+// body>footer h2
+// body>footer a
+
+// // ===> en tout 24 points
+
+// // ===> mettez des classes dans les sections
+// .bandeau h1
+

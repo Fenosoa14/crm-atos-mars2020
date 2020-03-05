@@ -1,0 +1,30 @@
+<div class="table-responsive">
+    <table class="table" id="table-light">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" *ngFor="let titre of entete">{{ titre }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
+            <td >{{ prestation.typePresta }}</td>
+            <td [appState]="prestation.state">{{ prestation.client }}</td>
+            <td >{{ prestation.nbJours }}</td>
+            <td >{{ prestation.tjmHt | currency: 'EUR' }}</td>
+            <td >{{ prestation | total | currency: 'EUR' }}</td>
+            <td >{{ prestation | total:'TTC' | currency: 'EUR' }}</td>
+            <td >{{ prestation.state }}</td>
+            <td [appState]="prestation.state">
+                <select (change)="changeState(prestation, $event)">
+                    <option *ngFor="let state of states | keyvalue" [value]="state"> {{ state.value }}</option>
+                    <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
+                </select> 
+            </td>
+          </tr> -->
+          
+          <!-- on va projeter le contenu en haut pour que le tableau soit réutilisable partout, ne contenant pas de logique metier -->
+          <ng-content></ng-content>
+
+        </tbody>
+      </table>
+</div>
