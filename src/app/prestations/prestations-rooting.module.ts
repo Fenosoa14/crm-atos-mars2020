@@ -3,13 +3,22 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { PageEditPrestationComponent } from './pages/page-edit-prestation/page-edit-prestation.component';
+import { DetailsComponent } from './components/details/details.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 const routes: Routes = [
   // { path: 'prestations', component: PagePrestationsComponent },
   { 
     path: '', 
     component: PagePrestationsComponent ,
-    data: {titreAprojeter: 'Titre via rooting', sousTitreAprojeter:'Sous titre via rooting'}
+    data: {titreAprojeter: 'Titre via rooting', sousTitreAprojeter:'Sous titre via rooting'},
+    children: [{
+      path: 'details',
+      component: DetailsComponent
+    }, {
+      path: 'comments',
+      component: CommentsComponent
+    }]
   },
   { 
     path: 'add', 

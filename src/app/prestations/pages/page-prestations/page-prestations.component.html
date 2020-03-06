@@ -19,11 +19,17 @@
                     <td>
                         <fa-icon [icon]="faTrashAlt" (click)="delete(prestation)"></fa-icon>
                     </td>
+                    <!-- <td>
+                        <fa-icon [icon]="faAlignCenter" (click)="datails(prestation)"></fa-icon>
+                    </td> -->
                 </tr>
 
         </app-tableau-dark>
 
         <app-button [label]="titreBouton" [route]="chemin"></app-button>
         <app-button [label]="titreBouton" [externalLink]="externalLink"></app-button>
+
+        <app-nav-inline [list]="listLink"></app-nav-inline>
+        <router-outlet></router-outlet>
 
 </app-template-b>

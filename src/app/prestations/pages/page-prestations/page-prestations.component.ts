@@ -4,7 +4,7 @@ import { Observable, Subscription, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faAlignCenter} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-prestations',
@@ -32,13 +32,17 @@ export class PagePrestationsComponent implements OnInit {
 
   // import du bouton supprimer depuis fontawesome
   public faTrashAlt = faTrashAlt;
+  public faAlignCenter = faAlignCenter;
+  
+
+  public listLink: {route: string, label: string}[];
 
   constructor(private ps: PrestationsService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.entete = ['Type', 'Client', 'NbJours', 'TjhmHT', 'TotalHT', 'TotalTTC', 'State','Modifier statut','Actions'];
+    this.entete = ['Type', 'Client', 'NbJours', 'TjhmHT', 'TotalHT', 'TotalTTC', 'State','Modifier statut','Actions', 'Details'];
     //this.collection$= this.ps.collection;
     this.ps.collection.subscribe((datas) => {
       this.collection$.next(datas);
@@ -61,6 +65,12 @@ export class PagePrestationsComponent implements OnInit {
     //       this.collection = prestations;
     //     }
     // );
+
+    this.listLink = [
+      {route:'details', label:'details'},
+      {route:'comments', label:'comments'}
+    ];
+
   }
 
   // delete
@@ -83,6 +93,10 @@ export class PagePrestationsComponent implements OnInit {
   public edit(prestation: Prestation) {
     this.router.navigate(['prestations/edit', prestation.id]);
   }
-  
+
+  // public details(prestation: any) {
+  //   this.ps.setDetails(prestation);
+  // }
+
 
 }
