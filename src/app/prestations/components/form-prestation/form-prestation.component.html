@@ -3,13 +3,19 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         
         <div class="form-group">
-          <label for="typepresta">Type</label>
-          <input formControlName="typepresta" type="text" class="form-control" id="typepresta" >
+          <label for="typePresta">Type</label>
+          <input formControlName="typePresta" type="text" class="form-control" id="typePresta" >
+          <div class="alert alert-danger" *ngIf="form.get('typePresta').invalid && form.get('typePresta').touched">
+              Champs invalide
+          </div>
         </div>
 
         <div class="form-group">
             <label for="client">Client</label>
             <input formControlName="client" type="text" class="form-control" id="client" >
+            <div class="alert alert-danger" *ngIf="form.get('client').invalid && form.get('client').touched">
+                Champs invalide
+            </div>
         </div>
 
         <div class="form-group">
@@ -40,7 +46,7 @@
         </div>
           
     
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
     </form>
 
 </div>

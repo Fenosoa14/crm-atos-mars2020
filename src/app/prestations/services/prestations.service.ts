@@ -42,6 +42,10 @@ public set collection(col: Observable<Prestation[]>) {
 }
 
 //add item collection
+public add(prestation: any) {
+  console.log(JSON.stringify(prestation));
+  return this.http.post(`${environment.urlApi}prestations/`, prestation);
+}
 
 //update item collection
 public updatePrestationState(prestation: Prestation, state: State) {

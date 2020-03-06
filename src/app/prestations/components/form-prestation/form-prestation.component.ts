@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-prestation',
@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class FormPrestationComponent implements OnInit {
 
   public states = Object.values(State);
-  @Output() nItem: EventEmitter<Prestation> = new EventEmitter();
+  @Output() nItem: EventEmitter<Prestation> = new EventEmitter(); // observable chaud qui hérite de subject
   public form: FormGroup;
   // on peut l'initialiser ici car dans l'edit en passant de ngOninit cette initialisation sera ecrasé par l'objet envoyé
   @Input() itemNikki = new Prestation();
@@ -20,8 +20,8 @@ export class FormPrestationComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      typepresta: [this.itemNikki.typePresta],
-      client: [this.itemNikki.client],
+      typePresta: [this.itemNikki.typePresta, Validators.required],
+      client: [this.itemNikki.client, Validators.compose([Validators.required, Validators.minLength(2)])],
       nbJours: [this.itemNikki.nbJours],
       tjmHt: [this.itemNikki.tjmHt],
       tva: [this.itemNikki.tva],
@@ -32,7 +32,7 @@ export class FormPrestationComponent implements OnInit {
 
 
   public onSubmit() {
-    console.log(this.form.value);
-    // this.nItem.emit();
+    // console.log(this.form.value);
+    this.nItem.emit(this.form.value);
   }
 }
