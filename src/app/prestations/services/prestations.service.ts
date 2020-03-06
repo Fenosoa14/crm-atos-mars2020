@@ -59,6 +59,10 @@ public updatePrestation(prestat: Prestation) {
 }
 
 //delete item collection
+public delete(prestation: Prestation) {
+  return this.http.delete(`${environment.urlApi}prestations/${prestation.id}`);
+}
+
 
 //get item by id from collection
 

@@ -16,6 +16,9 @@
                             <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
                         </select> 
                     </td>
+                    <td>
+                        <fa-icon [icon]="faTrashAlt" (click)="delete(prestation)"></fa-icon>
+                    </td>
                 </tr>
 
         </app-tableau-dark>

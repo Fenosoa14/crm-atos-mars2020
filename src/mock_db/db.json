@@ -21,36 +21,6 @@
       "comment": "Merci Capgemini pour les 1.2k jour"
     },
     {
-      "typepresta": "Ajout01",
-      "client": "Client 01",
-      "nbJours": 1,
-      "tjmHt": 1200,
-      "tva": 20,
-      "state": "Option",
-      "comments": "no comments",
-      "id": 3
-    },
-    {
-      "typepresta": "Coaching",
-      "client": "Client02",
-      "nbJours": 1,
-      "tjmHt": 1200,
-      "tva": 20,
-      "state": "Confirmé",
-      "comments": "Comments01",
-      "id": 4
-    },
-    {
-      "typepresta": "Type",
-      "client": "Client03",
-      "nbJours": 1,
-      "tjmHt": 1200,
-      "tva": 20,
-      "state": "Option",
-      "comments": "sdfsdf",
-      "id": 5
-    },
-    {
       "typePresta": "Coaching",
       "client": "Atos",
       "nbJours": 1,
@@ -69,6 +39,16 @@
       "state": "Option",
       "comments": null,
       "id": 7
+    },
+    {
+      "typePresta": "A supprimer",
+      "client": "A supprimer",
+      "nbJours": 1,
+      "tjmHt": 1200,
+      "tva": 20,
+      "state": "Option",
+      "comments": "A supprimer",
+      "id": 8
     }
   ],
   "clients": [
