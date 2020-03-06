@@ -44,11 +44,11 @@ export class PageEditPrestationComponent implements OnInit {
 
   public updateItem(prestation: any ) {
     prestation.id = this.itemId;
-    // this.ps.add(prestation).subscribe(
-    //   (reponse) => {
-    //       this.router.navigate(['../'], {relativeTo: this.activatedRoute});
-    //   }
-    // );
+    this.ps.updatePrestation(prestation).subscribe(
+      (reponse) => {
+          this.router.navigate(['../../'], {relativeTo: this.activatedRoute});
+      }
+    );
   }
 
 

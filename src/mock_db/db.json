@@ -41,14 +41,24 @@
       "id": 7
     },
     {
-      "typePresta": "A supprimer",
-      "client": "A supprimer",
+      "typePresta": "A valider",
+      "client": "A valider",
       "nbJours": 1,
       "tjmHt": 1200,
       "tva": 20,
       "state": "Option",
-      "comments": "A supprimer",
+      "comments": null,
       "id": 8
+    },
+    {
+      "typePresta": "New touched",
+      "client": "New touched",
+      "nbJours": 1,
+      "tjmHt": 1200,
+      "tva": 20,
+      "state": "Option",
+      "comments": null,
+      "id": 9
     }
   ],
   "clients": [
