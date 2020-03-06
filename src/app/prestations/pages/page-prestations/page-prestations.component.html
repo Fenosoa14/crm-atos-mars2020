@@ -2,7 +2,7 @@
 
         <app-tableau-dark [entete]="entete">
 
-                <tr *ngFor="let prestation of collection$ | async as retourAsyncCollection">
+                <tr (click)="edit(prestation)" *ngFor="let prestation of collection$ | async as retourAsyncCollection">
                     <td >{{ prestation.typePresta }}</td>
                     <td >{{ prestation.client }}</td>
                     <td >{{ prestation.nbJours }}</td>
@@ -11,7 +11,7 @@
                     <td >{{ prestation | total:'TTC' | currency: 'EUR' }}</td>
                     <td >{{ prestation.state }}</td>
                     <td [appState]="prestation.state">
-                        <select (change)="changeState(prestation, $event)">
+                        <select (click)="$event.stopPropagation()" (change)="changeState(prestation, $event)">
                             <!-- <option *ngFor="let state of states | keyvalue" [value]="state"> {{ state.value }}</option> -->
                             <option *ngFor="let state of states" [value]="state" [selected]="state === prestation.state"> {{ state }}</option>
                         </select> 

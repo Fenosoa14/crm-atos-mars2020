@@ -3,7 +3,7 @@ import { PrestationsService } from '../../services/prestations.service';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -34,7 +34,8 @@ export class PagePrestationsComponent implements OnInit {
   public faTrashAlt = faTrashAlt;
 
   constructor(private ps: PrestationsService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.entete = ['Type', 'Client', 'NbJours', 'TjhmHT', 'TotalHT', 'TotalTTC', 'State','Modifier statut','Actions'];
@@ -78,5 +79,10 @@ export class PagePrestationsComponent implements OnInit {
       prestation.state = retPrestat.state;
     });
   }
+
+  public edit(prestation: Prestation) {
+    this.router.navigate(['prestations/edit', prestation.id]);
+  }
+  
 
 }

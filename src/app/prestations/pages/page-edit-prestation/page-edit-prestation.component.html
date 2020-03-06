@@ -1,0 +1,11 @@
+
+<app-template-b [title]="titreAprojeter" [subtitle]="sousTitreAprojeter">
+
+        <app-form-prestation
+                *ngIf="item$ | async as item"
+                [itemNikki]="item" 
+                (nItem)="updateItem($event)"
+                >
+        </app-form-prestation>
+
+</app-template-b>

@@ -65,6 +65,8 @@ public delete(prestation: Prestation) {
 
 
 //get item by id from collection
-
+public getItembyId(id: string) {
+  return this.http.get<Prestation>(`${environment.urlApi}prestations/${id}`);
+}
 
 }
